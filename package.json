@@ -4,7 +4,7 @@
   "description": "Api to store images and diff them",
   "main": "server.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -16,9 +16,6 @@
     "url": "https://github.com/tapQA/ImageDiffAPI/issues"
   },
   "homepage": "https://github.com/tapQA/ImageDiffAPI#readme",
-  "devDependencies": {
-    "gulp": "^3.9.1"
-  },
   "dependencies": {
     "express": "^4.13.4"
   }
