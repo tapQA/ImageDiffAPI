@@ -1,0 +1,25 @@
+{
+  "name": "imagediffapi",
+  "version": "1.0.0",
+  "description": "Api to store images and diff them",
+  "main": "server.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tapQA/ImageDiffAPI.git"
+  },
+  "author": "Evan Duncan <evan.e.duncan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tapQA/ImageDiffAPI/issues"
+  },
+  "homepage": "https://github.com/tapQA/ImageDiffAPI#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
