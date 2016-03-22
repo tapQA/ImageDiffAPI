@@ -29,7 +29,22 @@ app.post('/api/images', upload.fields(uploadFields), (req, res) => {
 });
 
 app.post('/api/control', controlUpload.fields(uploadFields), (req, res) => {
-	res.json({ status: 'control uploaded!'});
+	res.json({ status: 'control uploaded'});
+
+	// Remove outdated images
+	// Because of the timestamp on the images
+	// the last image will always be the most recent
+	const files = fs.readdirSync(__dirname + '/control');
+	const lastFileIndex = files.length - 1;
+
+	if (files.length > 1) {
+		files.forEach((file, index) => {
+			if (index !== lastFileIndex) {
+				fs.unlinkSync(__dirname + '/control/' + file);
+			}
+		});
+	}
+	
 });
 
 app.get('/api/start_diffing', (req, res) => {
@@ -46,5 +61,7 @@ app.get('/api/start_diffing', (req, res) => {
 
 	res.json({ failedTests });
 });
+
+// app.post('/api/start_diffing', )
 
 app.listen(PORT, () => console.log('App listening on port ' + PORT));
